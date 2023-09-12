@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionDetection : MonoBehaviour
+public class CollisionDetection2 : MonoBehaviour
 {
+    [SerializeField] GameObject Comm_SpawnerContainer;
+    CrearEnemigo ref_crearEnemigo;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ref_crearEnemigo = Comm_SpawnerContainer.GetComponent<CrearEnemigo>();        
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class CollisionDetection : MonoBehaviour
         if (!obj.CompareTag("No_Romper"))
         {
             Destroy(obj, 0.1f);
+            ref_crearEnemigo.enemigo_actual = null;
         }
 
         //Tarea:  Random
