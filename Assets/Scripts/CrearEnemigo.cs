@@ -8,11 +8,11 @@ public class CrearEnemigo : MonoBehaviour
 
     [SerializeField] GameObject enemigo_a_crear;
 
-    [SerializeField] public GameObject enemigo_actual; //creado
+    [SerializeField] GameObject enemigo_actual; //creado
 
     [SerializeField] int idx_spawn_selected;
 
-    bool isCreated;
+    public bool isCreated;
 
     // Start is called before the first frame update
     void Start()

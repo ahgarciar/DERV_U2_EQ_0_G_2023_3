@@ -28,7 +28,11 @@ public class CollisionDetection2 : MonoBehaviour
         if (!obj.CompareTag("No_Romper"))
         {
             Destroy(obj, 0.1f);
-            ref_crearEnemigo.enemigo_actual = null;
+            if (obj.CompareTag("Enemy"))
+            {
+                ref_crearEnemigo.isCreated = false;
+            }
+            
         }
 
         //Tarea:  Random
