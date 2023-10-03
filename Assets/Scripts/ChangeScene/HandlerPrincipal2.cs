@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandlerPrincipal : MonoBehaviour
+public class HandlerPrincipal2 : MonoBehaviour
 {
-    int contador;
+    [SerializeField] int index_escena_destino;    
+    [SerializeField] int contador;
 
-    HandlerUI auxHandler;
+    HandlerUI auxHandler; 
 
     // Start is called before the first frame update
     void Start()
     {
         auxHandler = new HandlerUI();
-        contador = 10;
+
+        //  contador = 10;
         StopAllCoroutines();
         StartCoroutine("dutyCycle");
     }        
@@ -22,7 +24,7 @@ public class HandlerPrincipal : MonoBehaviour
             Debug.Log(contador.ToString());            
             if (--contador<0)
             {
-                auxHandler.CambiarEscena(2);
+                auxHandler.CambiarEscena(index_escena_destino);
                 break;
             }
             yield return new WaitForSeconds(0.5f);
